@@ -1,10 +1,39 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</body>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'core/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Django ajax TODO list</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+
+      <form class="row mt-5 pt-5" id="form">
+        <div class="col-12 col-lg-6 offset-lg-2">
+          <div class="input-group">
+            <input type="text" class="form-control" id="todo_name" placeholder="Add a todo" required>
+            <button type="submit" class="text-white btn btn-info">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="row my-5">
+        <div class="col-12 col-lg-6 offset-lg-2">
+          <ul class="list-group">
+            <!-- List of todos goes here -->
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="{% static 'core/js/jquery-3.6.0.min.js'  %}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/bootstrap.bundle.min.js' %}" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script></script>
+  </body>
 </html>
