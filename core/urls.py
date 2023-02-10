@@ -5,5 +5,6 @@ from core import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('todo-list/', views.todo_list, name='todo-list')
+    path('todo-list/', views.todo_list, name='todo-list'),
+    path('todo-create/', views.todo_create, name='todo-create'),
 ]

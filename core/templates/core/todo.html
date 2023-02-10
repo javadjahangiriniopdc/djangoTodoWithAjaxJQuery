@@ -40,17 +40,17 @@
         crossorigin="anonymous"></script>
 <script>
     $(document).ready(function () {
-        $.ajax({
-            url: '/todo-list/',
-            type: 'GET',
-            dataType: 'json',
-        }).done(function (response) {
-            console.log(response);
+            $.ajax({
+                url: '/todo-list/',
+                type: 'GET',
+                dataType: 'json',
+            }).done(function (response) {
+                console.log(response);
 
-            for (var i in response.todos) {
-                var todo = `<span>${response.todos[i].name}</span>`
+                for (var i in response.todos) {
+                    var todo = `<span>${response.todos[i].name}</span>`
 
-                var item = `
+                    var item = `
           <li class="list-group-item d-flex justify-content-between">
             ${todo}
             <div>
@@ -59,10 +59,30 @@
             </div>
           </li>
           `
-                $('.list-group').append(item) // append the new item to the <ul> tag
-            }
-        })
-    }
+                    $('.list-group').append(item) // append the new item to the <ul> tag
+                }
+            })
+
+            $('#form').submit(function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '/todo-create/',
+                    type: 'POST',
+                    data: {
+                        todo_name: $('#todo_name').val()
+                    }
+                }).done(
+                    function (response) {
+                        console.log(response);
+                    })
+                $(this).trigger('reset')
+
+
+            })
+
+
+        }
     )
 
 
